@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 if fortune $@ 2>&1 >/dev/null ; then
 	if [ -z $DELAY ]; then
 		DELAY=10
