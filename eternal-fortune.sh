@@ -15,7 +15,7 @@ if fortune $@ 2>&1 >/dev/null ; then
 		touch $LOGFILE
 		while (true)
 		do
-			echo `date` `fortune $@` >> $LOGFILE
+			echo [`date`] `fortune $@` >> $LOGFILE
 			sleep $DELAY
 		done
 	fi
