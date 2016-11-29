@@ -1,0 +1,2 @@
+# docker-fortune
+Dockerized fortune
