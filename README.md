@@ -23,9 +23,9 @@ docker logs -f logtest2
 Print fortunes to file with custom delay and early exit:
 
 ```sh
-docker run -d --name logtest3 -e LOGFILE=/tmp/log.txt -e DELAY=.1 piegsaj/fortune && \
+docker run -d --name logtest3 -e LOGFILE=/tmp/log -e DELAY=.1 piegsaj/fortune && \
 sleep 3 && \
-docker exec logtest3 cat /tmp/log.txt && \
+docker exec logtest3 cat /tmp/log && \
 docker rm -f logtest3
 ```
 
