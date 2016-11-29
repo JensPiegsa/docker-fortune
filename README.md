@@ -11,17 +11,21 @@ docker run -d --name logtest1 piegsaj/fortune && \
 docker logs -f logtest1
 ```
 
-Print fortunes to file:
-
-```sh
-docker run -d --name logtest2 -e LOGFILE /tmp/log.txt piegsaj/fortune && \
-docker logs -f logtest2
-```
-
 Print only short fortunes with custom delay:
 
 ```sh
-docker run -d --name logtest3 -e DELAY=.1 piegsaj/fortune -s && \
-docker logs -f logtest3
+docker run -d --name logtest2 -e DELAY=.1 piegsaj/fortune -s && \
+docker logs -f logtest2
+```
+
+
+
+Print fortunes to file with custom delay and early exit:
+
+```sh
+docker run -d --name logtest3 -e LOGFILE=/tmp/log.txt -e DELAY=.1 piegsaj/fortune && \
+sleep 3 && \
+docker exec logtest3 cat /tmp/log.txt && \
+docker rm -f logtest3
 ```
 
